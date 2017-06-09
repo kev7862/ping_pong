@@ -1,0 +1,10 @@
+.ping{
+  background-color: grey;
+  padding-top: 200px;;
+  height: 50%;
+  text-align: center;
+}
+#pop{
+  padding-left: 50px;
+  background-color: green;
+}
