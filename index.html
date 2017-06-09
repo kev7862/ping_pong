@@ -22,7 +22,7 @@
       <h2>Github username/url</h2>
       <p>https://github.com/kev7862/ping_pong</p>
       <h2>Level 2 test for:</h2>
-      <p>Java</p>
+      <p>Javascript</p>
     </div>
   </div>
 </div>
@@ -35,14 +35,45 @@
         <li>Numbers divisible by 5 become 'Pong'</li>
         <li>Numbers divisible by 15 become 'Pingpong'</li>
       </ul>
+      <form id="pingPongForm">
+      Enter your number here:<input id="number" type="text">
+      <input type="button"  value="Pingpong">
+    </form>
 
-      Enter your number here:<input type="text" name="" value="">
-      <input type="button" name="" value="Pingpong">
-    </div>
-    <script type="text/javascript">
+    <ul id="userOutput">
 
+    </ul>
+      <script type="text/javascript">
+      //user
+$(document).ready(function() {
+  $("Form#pingPongForm").submit(function(event) {
+    var userInput = parseInt($("input#number").val());
+    var result = pingPongFun(userInput);
+    result.forEach(function(output) {
+    $("#userOutput").append("<li>" + output + "</li>");
+    event.preventDefault();
+  });
+});
+});
 
-    </script>
+//business
+function pingPongFun(userInput){
+var result = [];
+for (var i = 1; i <= userInput; i++){
+  if (i % 15 === 0){
+    result.push ("Ping-Pong");
+  } else if (i % 5 === 0){
+    result.push ("Pong");
+
+  } else if (i % 3 === 0){
+    result.push ("Ping");
+  } else
+    result.push (i);
+}
+return result;
+}
+      </script>
+
 
 
     <!-- Latest compiled and minified JavaScript -->
